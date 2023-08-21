@@ -1,5 +1,6 @@
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { cookies } from 'next/headers'
+import { AuthButton } from './components/Auth-button'
 
 export default async function Home () {
   const supabase = createServerComponentClient({ cookies })
@@ -7,13 +8,11 @@ export default async function Home () {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <AuthButton />
       <div>
         {
           JSON.stringify(posts, null, 2)
         }
-      </div>
-      <div>
-        Hola Volter
       </div>
     </main>
   )
